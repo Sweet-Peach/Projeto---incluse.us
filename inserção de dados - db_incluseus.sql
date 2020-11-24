@@ -9812,10 +9812,10 @@ values
 
 Insert into tbl_usuario (nome, data_nasc, rg, cpf, genero, ID_login_usuario, ID_end_usuario)
 values 
-('Angela Nascimento Correa', 19891020, '43536549', '45255176789', 'mulher', 1, 1),
-('Marcos Santos de Araújo', '19940925', '51234768', '31639056467', 'não especificar', 2, 2),
-('Pamela Almeida da Silva', '19800715', '23674320', '76545398712', 'outros', 3, 3),
-('Eduardo Vieira Rodrigues', '19980312', '65321786', '87634527145', 'homem', 4, 4); 
+('Angela Nascimento Correa', 19891020, '45255176789', 'mulher', 1, 1),
+('Marcos Santos de Araújo', '19940925', '31639056467', 'não especificar', 2, 2),
+('Pamela Almeida da Silva', '19800715', '76545398712', 'outros', 3, 3),
+('Eduardo Vieira Rodrigues', '19980312', '87634527145', 'homem', 4, 4); 
 
 Insert into tbl_tel_usuario (ID_usuario, telefone, whatsapp, ID_tipo_tel)
 values 
@@ -9828,36 +9828,36 @@ values
 
 Insert into tbl_adv (nome, genero, data_nasc, rg, cpf, OAB, sobre, ID_login_adv, ID_end_adv, ID_formacao) 
 values
-('Henrique Lewis Nascimento', 'homem', 19800228 , '380451648', '25631453201', 'SC316598', 'Me chamo Henrique Lewis e tenho 40 anos, 
+('Henrique Lewis Nascimento', 'homem', 19800228, '25631453201', 'SC316598', 'Me chamo Henrique Lewis e tenho 40 anos, 
 formando pela Uninove e atuante em direito há cerca de 10 anos. Já ganhei inúmeros casos e consegui justiça para diversos clientes. 
 Procuro sempre ajudar aqueles que não tem condições de contratar um advogado particular, isso me atribui experiencia, certamente 
 nunca é demais, e o melhor disso é saber que pude ajudar pessoas que precisavam de justiça e não sabiam como conseguir, eu sou 
 aquele que pode garantir isso.', 1, 3, 2),
 
-('Pedro Le Blanc', 'homem', 19900517 , '325698745', '36914725820', 'RJ198563', 'Me chamo Pedro Le Blanc e acabei de finalizar o meu mestrado
+('Pedro Le Blanc', 'homem', 19900517, '36914725820', 'RJ198563', 'Me chamo Pedro Le Blanc e acabei de finalizar o meu mestrado
 em Direito pela Unicamp, nascido e crescido no Rio de Janeiro, agora sou professor e também atuo em casos, que na maioria das vezes 
 cobrem pessoas que não podem pagar por um advogado, ou seja, pessoas injustiçadas e de baixa renda. Estou atuando como professor, 
 pois acho importante ser alguém que passa o conhecimento adiante, tenho duas profissões que admiro muito, Professor e Advogado.', 2, 2, 5),
 
-('Matheus Cooper', 'homem',  19700805 , '120547896', '25639874120', 'DF169324', 'Me chamo Matheus Cooper, tenho bacharelado pela Unip, uma
+('Matheus Cooper', 'homem',  19700805, '25639874120', 'DF169324', 'Me chamo Matheus Cooper, tenho bacharelado pela Unip, uma
 excelente faculdade. Sou formado há 20 anos, já peguei todos os tipos de casos para exercer a profissão que amo. Desde a minha formação 
 ajudo clientes de baixa renda e para mim é o mesmo que defender um cliente particular! Exijo justiça pelos injustiçados, e exijo também 
 a igualdade social, e também, respeito por todos, pois sou um advogado que defende LGBTQIA+, mulheres, causas étnicas, PCDs e etc, 
 para mim todos são iguais perante a lei, então sinto a necessidade de defender exatamente todos!', 3, 4, 6),
 
-('Lyncoln Bellini', 'homem', 16920809 , '236549873', '32198745634', null, 'Me chamo Lyncoln Bellini e sou um futuro advogado. Estou em formação, 
+('Lyncoln Bellini', 'homem', 16920809, '32198745634', null, 'Me chamo Lyncoln Bellini e sou um futuro advogado. Estou em formação, 
 perto de finalizar a faculdade de direito na Mackenzie. No momento, posso atuar apenas como conselheiro, ou seja, quando procurado por clientes
 em situações que exigem justiça, o que posso fazer é orienta-los para que possam ter um norte do que precisam realizar, explico procedimentos e etc. 
 Isso é uma forma de ganhar experiencia ajudando da maneira que posso atualmente. ', 4, 6, 3),
 
-('Brenda Miller Gonçalves', 'mulher', 19770621 , '201365478', '36926485265', 'SP349852', 'Me chamo Brenda Miller Gonçalves, sou formada em 
+('Brenda Miller Gonçalves', 'mulher', 19770621, '36926485265', 'SP349852', 'Me chamo Brenda Miller Gonçalves, sou formada em 
 Direito Pela USP, atuo na área há cerca de 15 anos. Sou uma excelente advogada e famosa por ganhar casos de agressões a mulheres. 
 Casos como esse mexem muito comigo e sinto a necessidade de fazer justiça, ainda mais por aquelas que não tem condições de pagar 
 uma boa advogada. E eu vim para revolucionar, mulher que defende mulher! Não só defendo mulher, como também qualquer pessoa em 
 condições de dificuldade, já passei dificuldade quando mais nova, sabendo como é difícil, procuro fazer a diferença. Amo o 
 que eu faço e faço com amor, e claro, justiça.', 5, 1, 1),
 
-('Paulo de lacroix', 'homem', 19850726 , '321967874', '29846538719', null, 'Me chamo Paulo De Lacroix e serei um advogado completo em 6 meses. 
+('Paulo de lacroix', 'homem', 19850726, '29846538719', null, 'Me chamo Paulo De Lacroix e serei um advogado completo em 6 meses. 
 Começarei a atuar em casos que remetem injustiças contra as minorias, pessoas que tem seus direitos arrancados e precisam de justiça. Olho por 
 esse lado, portanto atuo como conselheiro para alguns clientes e casos que estudo sobre, pois no momento não posso ser o próprio advogado em questão, 
 todavia indico os melhores e passo informações que considero de extrema importância para o cliente saber o que fazer no início. ', 6, 5, 4);
