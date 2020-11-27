@@ -18,35 +18,35 @@ Sofrem as consequencias geradas pela intolerância da sociedade, excluindo-os do
 de forma direta ou indireta. Faremos o uso para a defesa de nossos clientes, que muitas das vezes sofrem ameaças diretas ou indiretas de seus agressores e precisam de algo que 
 os proteja perante a lei.'); 
 
-Insert into tbl_estado (uf, nome)
+Insert into tbl_estado (uf)
 values
-('AC', 'Acre'),
-('AL', 'Alagoas'),
-('AM', 'Amazonas'),
-('AP', 'Amapá'),
-('BA', 'Bahia'),
-('CE', 'Ceará'),
-('DF', 'Distrito Federal'),
-('ES', 'Espírito Santo'),
-('GO', 'Goiás'),
-('MA', 'Maranhão'),
-('MG', 'Minas Gerais'),
-('MS', 'Mato Grosso do Sul'),
-('MT', 'Mato Grosso'),
-('PA', 'Pará'),
-('PB', 'Paraíba'),
-('PE', 'Pernambuco'),
-('PI', 'Piauí'),
-('PR', 'Paraná'),
-('RJ', 'Rio de Janeiro'),
-('RN', 'Rio Grande do Norte'),
-('RO', 'Rondônia'),
-('RR', 'Roraima'),
-('RS', 'Rio Grande do Sul'),
-('SC', 'Santa Catarina'),
-('SE', 'Sergipe'),
-('SP', 'São Paulo'),
-('TO', 'Tocantins');  
+('AC' ),
+('AL' ),
+('AM' ),
+('AP' ),
+('BA'),
+('CE'),
+('DF'),
+('ES'),
+('GO'),
+('MA'),
+('MG'),
+('MS'),
+('MT'),
+('PA'),
+('PB'),
+('PE'),
+('PI'),
+('PR'),
+('RJ'),
+('RN'),
+('RO'),
+('RR'),
+('RS'),
+('SC'),
+('SE'),
+('SP'),
+('TO');  
 
 Insert into tbl_cidade (ID_estado, uf, nome) values 
 
@@ -9763,12 +9763,6 @@ Insert into tbl_cidade (ID_estado, uf, nome) values
 (27, 'TO', 'Wanderlandia'),
 (27, 'TO', 'Xambioa'); 
 
-Insert into tbl_tipo_tel (tipo)
-values 
-('fixo'),
-('celular'),
-('comercial');
-
 Insert into tbl_login_usuario (email, senha)
 values 
 ('angelanascimentocorrea@gmail.com', '9y5k4z11gg5'),
@@ -9817,12 +9811,12 @@ values
 ('Pamela Almeida da Silva', '19800715', '76545398712', 'outros', 3, 3),
 ('Eduardo Vieira Rodrigues', '19980312', '87634527145', 'homem', 4, 4); 
 
-Insert into tbl_tel_usuario (ID_usuario, telefone, whatsapp, ID_tipo_tel)
+Insert into tbl_tel_usuario (ID_usuario, telefone)
 values 
-(1, '11956227129', 1, 2),
-(2, '11923769912', 1, 2),
-(3, '11996722254', 0, 2),
-(4, '11987653489', 1, 2);
+(1, '11956227129'),
+(2, '11923769912'),
+(3, '11996722254'),
+(4, '11987653489');
 
 
 
@@ -9862,14 +9856,14 @@ Começarei a atuar em casos que remetem injustiças contra as minorias, pessoas 
 esse lado, portanto atuo como conselheiro para alguns clientes e casos que estudo sobre, pois no momento não posso ser o próprio advogado em questão, 
 todavia indico os melhores e passo informações que considero de extrema importância para o cliente saber o que fazer no início. ', 6, 5, 4);
 
-Insert into tbl_tel_adv (ID_adv, ID_tipo_tel, telefone, whatsapp)
+Insert into tbl_tel_adv (ID_adv, telefone)
 values
-(1, 1, '11955199874', 1),
-(2, 2, '11945852805', 1),
-(3, 3, '11932456987', 1),
-(4, 1, '11945874965', 1),
-(5, 2, '11932655885', 0),
-(6, 3, '11974485203', 0);
+(1, '11955199874'),
+(2, '11945852805'),
+(3, '11932456987'),
+(4, '11945874965'),
+(5, '11932655885'),
+(6, '11974485203');
 
 Insert into tbl_adv_categ (ID_adv, ID_categ_direito) 
 values
