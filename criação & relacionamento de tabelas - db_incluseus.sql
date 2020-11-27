@@ -26,21 +26,8 @@ create table tbl_tel_usuario(
 	ID_tel_usuario smallint auto_increment,
     ID_usuario smallint,
     telefone varchar(11) not null,
-    whatsapp boolean not null,
-    ID_tipo_tel smallint,
    constraint PK_ID_tel_usuario primary key (ID_tel_usuario, ID_usuario)
 );
-
-create table tbl_tipo_tel(
-	ID_tipo_tel smallint auto_increment,
-    tipo enum('fixo', 'celular', 'comercial') not null,
-   constraint PK_ID_tipo_tel primary key (ID_tipo_tel)
-);
-
-
-
-
-
 
 
 create table tbl_adv(
@@ -61,8 +48,6 @@ create table tbl_tel_adv(
 	ID_tel_adv smallint auto_increment,
     ID_adv smallint,
     telefone varchar(11) not null,
-    whatsapp boolean not null,
-    ID_tipo_tel smallint,
    constraint PK_ID_tel_adv primary key (ID_tel_adv, ID_adv)
 );
 
@@ -216,9 +201,6 @@ alter table tbl_tel_usuario add
 constraint FK_ID_usuario foreign key (ID_usuario)
 references tbl_usuario (ID_usuario) on delete cascade on update cascade;
 
-alter table tbl_tel_usuario add
-constraint FK_ID_tipo_tel_usuario foreign key (ID_tipo_tel)
-references tbl_tipo_tel (ID_tipo_tel) on delete cascade on update cascade;
 
 alter table tbl_adv add
 constraint FK_ID_login_adv foreign key (ID_login_adv)
@@ -232,9 +214,6 @@ alter table tbl_tel_adv add
 constraint FK_ID_adv foreign key (ID_adv)
 references tbl_adv (ID_adv) on delete cascade on update cascade;
 
-alter table tbl_tel_adv add
-constraint FK_ID_tipo_tel_adv foreign key (ID_tipo_tel)
-references tbl_tipo_tel (ID_tipo_tel) on delete cascade on update cascade;
 
 alter table tbl_adv add
 constraint FK_ID_end_adv foreign key (ID_end_adv)
