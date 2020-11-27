@@ -165,6 +165,7 @@ create table tbl_login_adv (
 create table tbl_cidade(
 	ID_cidade smallint auto_increment,
     nome varchar(50) not null,
+	uf varchar(6),
     ID_estado smallint,
    constraint PK_ID_cidade primary key (ID_cidade)
 );
