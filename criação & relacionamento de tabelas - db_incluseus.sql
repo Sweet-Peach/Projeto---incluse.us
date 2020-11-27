@@ -187,7 +187,6 @@ create table tbl_cidade(
 create table tbl_estado(
 	ID_estado smallint auto_increment,
     uf varchar(4) not null,
-    nome varchar(50) not null,
    constraint PK_ID_estado primary key (ID_estado)
 );
 
