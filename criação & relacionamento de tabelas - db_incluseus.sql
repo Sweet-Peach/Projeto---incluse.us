@@ -38,7 +38,6 @@ create table tbl_adv(
     sobre text,
     cpf varchar(14) not null unique,
     OAB char(8),
-    ID_formacao smallint,
     ID_end_adv smallint,
     ID_login_adv smallint,
    constraint PK_ID_adv primary key (ID_adv)
@@ -101,24 +100,6 @@ create table tbl_categ_direito (
     descrição text not null,
    constraint PK_ID_categ_direito primary key (ID_categ_direito)
 );
-
-create table tbl_adv_categ (
-	ID_adv smallint,
-    ID_categ_direito smallint,
-   constraint PK_ID_adv_categ primary key (ID_adv, ID_categ_direito)
-);
-
-create table tbl_formacao (
-	ID_formacao smallint auto_increment,
-    tipo_formacao enum('em formação', 'bacharelado', 'licenciatura', 'Mestrado', 'Doutorado','Pós-doutorado') not null,
-    instituicao varchar(20) not null,
-    data_inicio date not null,
-    data_fim date not null,
-   constraint PK_id_formacao primary key (ID_formacao)
-);
-
-
-
 
 
 
@@ -207,9 +188,6 @@ alter table tbl_adv add
 constraint FK_ID_login_adv foreign key (ID_login_adv)
 references tbl_login_adv (ID_login_adv) on delete cascade on update cascade;
 
-alter table tbl_adv add
-constraint FK_ID_formacao foreign key (ID_formacao) 
-references tbl_formacao (ID_formacao) on delete cascade on update cascade;
 
 alter table tbl_tel_adv add
 constraint FK_ID_adv foreign key (ID_adv)
@@ -228,13 +206,6 @@ alter table tbl_end_adv add
 constraint FK_ID_estado_adv foreign key(ID_estado)
 references tbl_estado (ID_estado) on delete cascade on update cascade;
 
-alter table tbl_adv_categ add
-constraint FK_ID_categ_direito foreign key (ID_categ_direito)
-references tbl_categ_direito (ID_categ_direito) on delete cascade on update cascade;
-
-alter table tbl_adv_categ add
-constraint FK_id_adv_categ foreign key (ID_adv)
-references tbl_adv (id_adv) on delete cascade on update cascade;
 
 alter table tbl_caso add
 constraint FK_ID_categ_direito_caso foreign key (ID_categ_direito)
