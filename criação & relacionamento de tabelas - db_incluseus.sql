@@ -65,27 +65,21 @@ create table tbl_caso (
 
 create table tbl_end_usuario(
 	ID_end_usuario smallint auto_increment,
-    rua varchar(50) not null,
-    numero varchar(5) not null,
-    complemento varchar(20),
+    bairro varchar(100) not null,
 	ID_estado smallint,
    constraint PK_ID_end_usuario primary key (ID_end_usuario)
 );
 
 create table tbl_end_caso (
 	ID_end_caso smallint  auto_increment,
-    rua varchar(50) not null,
-    numero varchar(5) not null,
-    complemento varchar(20),
+    bairro varchar(100) not null,
 	ID_estado smallint,
    constraint PK_ID_end_caso primary key (ID_end_caso)
 );
 
 create table tbl_end_adv (
 	ID_end_adv smallint  auto_increment,
-    rua varchar(50) not null,
-    numero varchar(5) not null,
-    complemento varchar(20),
+    bairro varchar(100) not null,
 	ID_estado smallint,
    constraint PK_ID_end_adv primary key (ID_end_adv)
 );
