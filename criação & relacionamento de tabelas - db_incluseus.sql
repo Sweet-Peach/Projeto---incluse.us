@@ -16,7 +16,7 @@ create table tbl_usuario (
     nome varchar(70) not null,
     data_nasc date not null,
     cpf char(14) unique not null,
-    genero enum('mulher','homem','outros', 'não especificar') not null,
+    genero enum('feminino','masculino','outros', 'não especificar') not null,
     ID_login_usuario smallint,
     ID_end_usuario smallint,
    constraint PK_ID_usuario primary key (ID_usuario)
@@ -32,12 +32,11 @@ create table tbl_tel_usuario(
 
 create table tbl_adv(
 	ID_adv smallint auto_increment,
-    genero enum('mulher','homem', 'outros', 'não especificar') not null,
+    genero enum('feminino','masculino', 'outros', 'não especificar') not null,
     nome varchar(70) not null,
     data_nasc date not null,
     sobre text,
     cpf varchar(14) not null unique,
-    OAB char(8),
     ID_end_adv smallint,
     ID_login_adv smallint,
    constraint PK_ID_adv primary key (ID_adv)
@@ -56,7 +55,7 @@ create table tbl_caso (
     descricao_caso text not null,
     data_caso date not null,
     situacao boolean not null,
-    nota smallint not null,
+    gravidade smallint not null,
     ID_categ_direito smallint,
 	ID_usuario smallint,
 	ID_end_caso smallint,
@@ -69,7 +68,6 @@ create table tbl_end_usuario(
     rua varchar(50) not null,
     numero varchar(5) not null,
     complemento varchar(20),
-    ID_cidade smallint,
 	ID_estado smallint,
    constraint PK_ID_end_usuario primary key (ID_end_usuario)
 );
@@ -79,7 +77,6 @@ create table tbl_end_caso (
     rua varchar(50) not null,
     numero varchar(5) not null,
     complemento varchar(20),
-    ID_cidade smallint,
 	ID_estado smallint,
    constraint PK_ID_end_caso primary key (ID_end_caso)
 );
@@ -89,7 +86,6 @@ create table tbl_end_adv (
     rua varchar(50) not null,
     numero varchar(5) not null,
     complemento varchar(20),
-    ID_cidade smallint,
 	ID_estado smallint,
    constraint PK_ID_end_adv primary key (ID_end_adv)
 );
@@ -171,9 +167,6 @@ alter table tbl_usuario add
 constraint FK_ID_end_usuario foreign key (ID_end_usuario)
 references tbl_end_usuario  (ID_end_usuario) on delete cascade on update cascade;
 
-alter table tbl_end_usuario add
-constraint FK_ID_cidade_usuario foreign key (ID_cidade)
-references tbl_cidade (ID_cidade) on delete cascade on update cascade;
 
 alter table tbl_end_usuario add
 constraint FK_ID_estado_usuario foreign key (ID_estado)
@@ -198,9 +191,6 @@ alter table tbl_adv add
 constraint FK_ID_end_adv foreign key (ID_end_adv)
 references tbl_end_adv (ID_end_adv) on delete cascade on update cascade;
 
-alter table tbl_end_adv add
-constraint FK_ID_cidade_adv foreign key(ID_cidade)
-references tbl_cidade (ID_cidade) on delete cascade on update cascade;
 
 alter table tbl_end_adv add
 constraint FK_ID_estado_adv foreign key(ID_estado)
@@ -219,9 +209,6 @@ alter table tbl_caso add
 constraint FK_ID_end_caso foreign key (ID_end_caso)
 references tbl_end_caso (ID_end_caso) on delete cascade on update cascade;
 
-alter table tbl_end_caso add
-constraint FK_ID_cidade_caso foreign key (ID_cidade)
-references tbl_cidade (ID_cidade) on delete cascade on update cascade;
 
 alter table tbl_end_caso add
 constraint FK_ID_estado_caso foreign key (ID_estado)
