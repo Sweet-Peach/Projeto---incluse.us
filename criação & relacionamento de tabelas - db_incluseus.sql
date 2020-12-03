@@ -9,6 +9,8 @@ create database db_incluseUs;
 
 Use db_incluseUs;
 
+mysql_set_charset('utf8');
+
 #Criação de tabelas
 
 create table tbl_usuario (
