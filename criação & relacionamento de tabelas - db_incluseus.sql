@@ -123,14 +123,14 @@ create table tbl_match_aconselhamento (
 create table tbl_login_usuario (
 	ID_login_usuario smallint auto_increment,
     email varchar(70) unique not null,
-    senha varchar(32) not null,
+    senha varchar(300) not null,
    constraint PK_ID_login_usuario primary key (ID_login_usuario)
 );
 
 create table tbl_login_adv (
 	ID_login_adv smallint auto_increment,
     email varchar(70) unique not null,
-    senha varchar(32) not null,
+    senha varchar(300) not null,
    constraint PK_ID_login_usuario primary key (ID_login_adv)
 );
 
