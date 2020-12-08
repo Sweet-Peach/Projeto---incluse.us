@@ -15,7 +15,7 @@ Use db_incluseUs;
 create table tbl_usuario (
 	ID_usuario smallint auto_increment,
     nome varchar(70) not null,
-    ID_login_usuario smallint,
+    ID_login smallint,
     ID_end_usuario smallint,
    constraint PK_ID_usuario primary key (ID_usuario)
 );
@@ -32,7 +32,7 @@ create table tbl_adv(
 	ID_adv smallint auto_increment,
     nome varchar(70) not null,
     ID_end_adv smallint,
-    ID_login_adv smallint,
+    ID_login smallint,
    constraint PK_ID_adv primary key (ID_adv)
 );
 
