@@ -15,10 +15,7 @@ Use db_incluseUs;
 create table tbl_usuario (
 	ID_usuario smallint auto_increment,
     nome varchar(70) not null,
-    data_nasc date not null,
-    cpf char(14) unique not null,
-    genero enum('feminino','masculino','outros', 'não especificar') not null,
-    ID_login_usuario smallint,
+    ID_login smallint,
     ID_end_usuario smallint,
    constraint PK_ID_usuario primary key (ID_usuario)
 );
@@ -33,13 +30,9 @@ create table tbl_tel_usuario(
 
 create table tbl_adv(
 	ID_adv smallint auto_increment,
-    genero enum('feminino','masculino', 'outros', 'não especificar') not null,
     nome varchar(70) not null,
-    data_nasc date not null,
-    sobre text,
-    cpf varchar(14) not null unique,
     ID_end_adv smallint,
-    ID_login_adv smallint,
+    ID_login smallint,
    constraint PK_ID_adv primary key (ID_adv)
 );
 
@@ -54,12 +47,10 @@ create table tbl_caso (
 	ID_caso smallint auto_increment,
     titulo_caso varchar(50) not null,
     descricao_caso text not null,
-    data_caso date not null,
     situacao boolean not null,
     gravidade smallint not null,
     ID_categ_direito smallint,
 	ID_usuario smallint,
-	ID_end_caso smallint,
    constraint PK_ID_caso primary key (ID_caso)
 );
 
@@ -71,12 +62,6 @@ create table tbl_end_usuario(
    constraint PK_ID_end_usuario primary key (ID_end_usuario)
 );
 
-create table tbl_end_caso (
-	ID_end_caso smallint  auto_increment,
-    bairro varchar(100) not null,
-	ID_estado smallint,
-   constraint PK_ID_end_caso primary key (ID_end_caso)
-);
 
 create table tbl_end_adv (
 	ID_end_adv smallint  auto_increment,
@@ -120,27 +105,15 @@ create table tbl_match_aconselhamento (
    constraint PK_match_aconselhamento primary key (ID_caso, ID_adv, ID_usuario)
 );
 
-create table tbl_login_usuario (
-	ID_login_usuario smallint auto_increment,
+create table tbl_login (
+	ID_login smallint auto_increment,
     email varchar(70) unique not null,
     senha varchar(300) not null,
-   constraint PK_ID_login_usuario primary key (ID_login_usuario)
+	escolha boolean,
+   constraint PK_ID_login primary key (ID_login)
 );
 
-create table tbl_login_adv (
-	ID_login_adv smallint auto_increment,
-    email varchar(70) unique not null,
-    senha varchar(300) not null,
-   constraint PK_ID_login_usuario primary key (ID_login_adv)
-);
 
-create table tbl_cidade(
-	ID_cidade smallint auto_increment,
-    nome varchar(50) not null,
-	uf varchar(6),
-    ID_estado smallint,
-   constraint PK_ID_cidade primary key (ID_cidade)
-);
 
 create table tbl_estado(
 	ID_estado smallint auto_increment,
@@ -150,13 +123,10 @@ create table tbl_estado(
 
 #Relacionar tabelas 
 
-alter table tbl_cidade add 
-constraint FK_ID_estado foreign key (ID_estado)
-references tbl_estado (ID_estado) on delete cascade on update cascade;
     
 alter table tbl_usuario add
-constraint FK_ID_login_usuario foreign key (ID_login_usuario)
-references tbl_login_usuario (ID_login_usuario) on delete cascade on update cascade;
+constraint FK_ID_login_usuario foreign key (ID_login)
+references tbl_login (ID_login) on delete cascade on update cascade;
 
 alter table tbl_usuario add
 constraint FK_ID_end_usuario foreign key (ID_end_usuario)
@@ -173,8 +143,8 @@ references tbl_usuario (ID_usuario) on delete cascade on update cascade;
 
 
 alter table tbl_adv add
-constraint FK_ID_login_adv foreign key (ID_login_adv)
-references tbl_login_adv (ID_login_adv) on delete cascade on update cascade;
+constraint FK_ID_login_adv foreign key (ID_login)
+references tbl_login(ID_login) on delete cascade on update cascade;
 
 
 alter table tbl_tel_adv add
@@ -200,14 +170,7 @@ alter table tbl_caso add
 constraint FK_ID_usuario_caso foreign key (id_usuario)
 references tbl_usuario (ID_usuario) on delete cascade on update cascade;
 
-alter table tbl_caso add
-constraint FK_ID_end_caso foreign key (ID_end_caso)
-references tbl_end_caso (ID_end_caso) on delete cascade on update cascade;
 
-
-alter table tbl_end_caso add
-constraint FK_ID_estado_caso foreign key (ID_estado)
-references tbl_estado (ID_estado) on delete cascade on update cascade;
 
 alter table tbl_avaliacao_adv add
 constraint FK_ID_caso_avalicao foreign key (ID_caso)
